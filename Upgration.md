@@ -155,7 +155,7 @@ Run `screen`, in screen launch commands {1-4}. Launch command then `CTRL+A` foll
  0. Login to your existing Islandora Server. 
  1. Copy our backup directory from `~/isledata` to a new location or server:
     a. `screen`
-    b. `rsync ~/isledata`
+    b. `rsync ~/isledata` (depending on whether you are accessing remote servers or not - you may need to structure the rsync commands like so `rsync -avrzh <source file/folder> user@new-server:<path to save files to>` - important to include the colon at the end of the path for where to save the files!)
     c. `CTRL+A` followed by `c`
  2. Copy Fedora's datastreamStore folder:
    a. `rsync` Fedora datastreamStore

@@ -140,7 +140,8 @@ Phew!
       - Fedora datastreamStore
       - Fedora objectStore
       - Fedora resourceIndex
-
+    The next section will explain how to copy these folders over.
+    
 Done! Coffee break.
 
 ## Copying Data to a new location or server
@@ -153,13 +154,21 @@ Run `screen`, in screen launch commands {1-4}. Launch command then `CTRL+A` foll
 
  0. Login to your existing Islandora Server. 
  1. Copy our backup directory from `~/isledata` to a new location or server
-    - rsync `~/isledata`
+    a. `screen`
+    b. `rsync ~/isledata`
+    c. `CTRL+A` followed by `c`
  2. Copy Fedora's datastreamStore folder
-    - rsync Fedora datastreamStore
+   a. `screen`
+   b. `rsync` Fedora datastreamStore
+   c. `CTRL+A` followed by `c`
  3. Copy Fedora's objectStore folder
-    - rsync Fedora objectStore
+    a. `screen`
+    b. `rsync` Fedora objectStore
+    c. `CTRL+A` followed by `c`
  4. Copy Fedora's resourceIndex
-    - rsync Fedora resourceIndex
+     a. `screen`
+    b. `rsync` Fedora resourceIndex
+    c. `CTRL+A` followed by `d`
 
 ## Launching ISLE with your data
 

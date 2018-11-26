@@ -153,22 +153,19 @@ Done! Coffee break.
 Run `screen`, in screen launch commands {1-4}. Launch command then `CTRL+A` folled by `c` to create a new terminal to run next command; repeat until all commands are running. Detach from `screen` (CTRL+A followed by d) to leave the processes running. 
 
  0. Login to your existing Islandora Server. 
- 1. Copy our backup directory from `~/isledata` to a new location or server
+ 1. Copy our backup directory from `~/isledata` to a new location or server:
     a. `screen`
     b. `rsync ~/isledata`
     c. `CTRL+A` followed by `c`
- 2. Copy Fedora's datastreamStore folder
-   a. `screen`
-   b. `rsync` Fedora datastreamStore
-   c. `CTRL+A` followed by `c`
- 3. Copy Fedora's objectStore folder
-    a. `screen`
-    b. `rsync` Fedora objectStore
-    c. `CTRL+A` followed by `c`
- 4. Copy Fedora's resourceIndex
-     a. `screen`
-    b. `rsync` Fedora resourceIndex
-    c. `CTRL+A` followed by `d`
+ 2. Copy Fedora's datastreamStore folder:
+   a. `rsync` Fedora datastreamStore
+   b. `CTRL+A` followed by `c`
+ 3. Copy Fedora's objectStore folder:
+    a. `rsync` Fedora objectStore
+    b. `CTRL+A` followed by `c`
+ 4. Copy Fedora's resourceIndex:
+    a. `rsync` Fedora resourceIndex
+    b. `CTRL+A` followed by `d`
 
 ## Launching ISLE with your data
 

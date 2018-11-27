@@ -97,7 +97,7 @@ Phew!
 
  0. Login to your existing Islandora Server. 
     - Change directory to your home directory with `cd ~`. 
-    - We will be create backups in your home directory to find them easily; 
+    - First we will create backups in your home directory to find them easily; 
     - Create a new directory in your home folder: `mkdir isledata && cd isledata` before starting.
       - Your backups will be stored in `~/isledata` (`cd ~/isledata` to return to this location)
     - If you will be copying data to a remote server please have SSH access to that server.
@@ -148,14 +148,12 @@ Done! Coffee break.
 > Using `screen` we will be able to copy these files and then leave the session running on the remote server. Test running `screen` - if the application is installed you will be in a terminal multiplier; hit `CTRL+A` follwed by `d` to detach from it. Type `screen` to reconnect.
   - If screen is not installed, install it now: `sudo apt-get install screen` or `sudo yum install screen`.
 
-> This section is STUBBED only. 
-
-Run `screen`, in screen launch commands {1-4}. Launch command then `CTRL+A` folled by `c` to create a new terminal to run next command; repeat until all commands are running. Detach from `screen` (CTRL+A followed by d) to leave the processes running. 
+Run `screen` and in screen launch commands {1-4}. Launch command then `CTRL+A` followed by `c` to create a new terminal to run next command; repeat until all commands are running. Detach from `screen` with command `CTRL+A followed by d` to leave the processes running. 
 
  0. Login to your existing Islandora Server. 
- 1. Copy our backup directory from `~/isledata` to a new location or server:
+ 1. Copy your backup directory from `~/isledata` to a new location or server:
     a. `screen`
-    b. `rsync ~/isledata` (depending on whether you are accessing remote servers or not - you may need to structure the rsync commands like so `rsync -avrzh <source file/folder> user@new-server:<path to save files to>` - important to include the colon at the end of the path for where to save the files!)
+    b. `rsync ~/isledata` (depending on whether you are accessing remote servers or not - you may need to structure the rsync commands like so `rsync -avrzh <source file/folder> user@new-server:<path to save files to>` - important to include the colon at the end of the path for where to save the files to!)
     c. `CTRL+A` followed by `c`
  2. Copy Fedora's datastreamStore folder:
    a. `rsync` Fedora datastreamStore

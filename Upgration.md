@@ -188,6 +188,16 @@ Using your editor of choice open:
 
  3. ISLE: .env and tomcat.env
     - `cd ISLE` if you have not already changed into the directory
+    - Edit the .env file and change the values of COMPOSE_PROJECT_NAME, BASE_DOMAIN, and CONTAINER_SHORT_ID. e.g. for a production site you may use:
+
+COMPOSE_PROJECT_NAME=isleproduction
+
+BASE_DOMAIN=mydomain.edu
+
+CONTAINER_SHORT_ID=prod
+
+Please note: Much of the file is already with comments guiding the enduser to key areas or files to edit or modify accordingly.
+
     - One variable, `DRUPAL_HASH_SALT` _must match_ what is present in your existing `sites/default/settings.php`
       - Open `settings.php` and search for `$drupal_hash_salt` and copy the result directly to your .env. 
     - Remaining values do not need to match your old Islandora instance - in fact it might be better they DO NOT.

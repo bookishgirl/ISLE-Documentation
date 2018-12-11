@@ -26,7 +26,7 @@ This Migration guide will help you migrate your existing production Islandora en
 
 * Have an existing domain name that works - is set up with DNS etc...
 
-* Have [SSL Certificates](../glossary.md#systems) previously created for the web domain. (_Please work with the appropriate internal IT resource to provision these files for your domain_)
+* Have [SSL Certificates](../glossary.md#systems) previously created for the web domain. (_Please work with the appropriate internal IT resource to provision these files for your domain_) OR: Use the [Let's Encrypt guide](../07_appendices/configuring-lets-encrypt.md) to generate and install SSL Certificates.
 
 * ISLE project has been cloned to BOTH your local laptop/workstation AND the ISLE host server
 
@@ -297,9 +297,18 @@ Staying within `/opt/ISLE/yourdomain-config`
     * `cd /var/www/html`
     * `./vsets.sh`  
 
+* Edit .htaccess to enforce https
+    * `echo "SetEnvIf X-Forwarded-Proto https HTTPS=on" | tee -a /var/www/html/.htaccess`
+
 * Check if the site is now is running properly by opening a web browser and navigating to your new ISLE domain e.g. `https://isle-prod-project.institution`
 
 * Please note while you may be able to see objects being displayed, metadata and search results will be empty until you run the last step in the Reindex process.
+
+**Troubleshooting Note** Sites migrating *from* a version of Drupal prior to 7.50 may need to update their mysql tables to utf8mb4.  On the new site, go to `https://isle-prod-project.institution/admin/reports/status` (you will need to be logged in as a Drupal Admin) and look for the following error:
+
+![Database 4 byte UTF-8 support Enabled, but database tables need conversion](../assets/utf8mb4-error.png)
+
+Instructions for converting the Drupal mysql database are available on the [Drupal website](https://www.drupal.org/project/utf8mb4_convert)
 
 ---
 
@@ -318,3 +327,4 @@ Staying within `/opt/ISLE/yourdomain-config`
 * Check the results on the site using Islandora simple search or the appropriate search method.
 
 Congratulations you should have successfully migrated your production Islandora site to ISLE!!
+

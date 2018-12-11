@@ -5,13 +5,13 @@ Follow this guide to spin up and install ISLE utilizing the built-in `isle.local
 
 This Test/Demo ISLE guide creates an Islandora environment (`isle.localdomain`) that includes an un-themed Drupal website and empty Fedora repository for endusers to develop code, test ingests, test metadata, update fields in SOLR indexing and otherwise "kick the tires" on ISLE prior for further usages e.g. creating a new ISLE production site or migrating a current Islandora production site to ISLE.
 
-While this checklist will attempt to point out most of the usage challenges or pitfalls, ISLE assumes no responsibility or liability in this matter should an enduser have customizations beyond what this guide outlines.
+This checklist will attempt to point out most of the usage challenges or pitfalls.  For additional help, please post a message to the [Islandora ISLE Google group](https://groups.google.com/forum/#!forum/islandora-isle).
 
 **Please note:** There is a [Glossary](../glossary.md) with relevant terms to help guide installation.
 
 ### Assumptions / Prerequisites
 
-* This test site guide is designed for a local laptop / workstation that has already followed the appropriate setup and configuration instructions in the `Test/Demo ISLE` section of the [guide](/index.md#test-demo-isle).
+* This test site guide is designed for a local laptop / workstation that has already followed the appropriate setup and configuration instructions in the `Test/Demo ISLE` section of the [guide](../index.md#test-demo-isle).
 
 * Instructions below assume a MacOS or Linux laptop or workstation. Windows users may have to adjust / swap out various tools as needed.
 
@@ -30,34 +30,24 @@ While this checklist will attempt to point out most of the usage challenges or p
 
 It is important to add `isle.localdomain admin.isle.localdomian portainer.isle.localdomain` to your `/etc/hosts` file, as connecting directly to an IP address can prevent some components from working properly.
 
-* **Vagrant**: If you are using Vagrant, move on to the next section (_Summary: Test site launch process_) as this part is handled automatically.
+* Instructions for editing hosts files can be found [here](../07_appendices/editing-the-hosts-file.md).  
 
-* **All other host configurations**:  Instructions for editing hosts files can be found [here](../07_appendices/editing-the-hosts-file.md).  
-
-* After completing the appropriate steps, please return to this guide and continue with _Step 1: Test site Launch process_ below
+* After completing the appropriate steps, please return to this guide and continue with _Step 1: Test site Launch process_ below.
 
 ---
 
 ### Step 1: Test site launch process
 
-* If using:
-
-    * **~~Vagrant or a Virtualbox VM:~~** ~~The steps below assume you are shelled in (connected by SSH) as the `islandora` user into the ISLE Host VM via a terminal on a local laptop.~~
-
-        * ~~`ssh islandora@10.10.10.130`~~
-        * ~~`cd /opt/ISLE`~~
-
-    * **Docker for Mac:** Continue to use the open terminal and navigate `cd ~/Documents/ISLE` to the ISLE project directory.
-
-    * **Docker for Windows:** Continue to use the open PowerShell window and navigate to the ISLE project directory if not already there: `cd ~\Documents\ISLE`.
+* In terminal (shell) or PowerShell navigate to your ISLE project directory. You may already be in this directory if you are coming from the [Software Requirements Guide](../01_installation_host_server/software-dependencies.md).
 
 The following steps below are for all users (_Vagrant, VM, non Vagrant and Docker for MacOS, Windows and Ubuntu Desktop users alike._)
 
 The install times stated below for each container are highly dependent on the enduser's available Internet bandwidth and could take more or less time accordingly.
 
 * Within the open terminal, run:
-
-    *  `docker-compose up -d`
+```bash
+docker-compose up -d
+```
 
 * This is going to download and start all ISLE Docker images (_roughly 6 GB of data so it may take a little while depending on your Internet connection_)
 
@@ -70,13 +60,14 @@ The install times stated below for each container are highly dependent on the en
 
 -----
 
-#### Step 2: Run install script on Apache container
+### Step 2: Run install script on Apache container
 
 **Total build process** may take up to 15 - 45 minutes (_depending on system and internet speeds_)
 
-* Run the following shell scripts manually on the apache container  
-
-    * `docker exec -it isle-apache-ld bash /utility-scripts/isle_drupal_build_tools/isle_islandora_installer.sh`
+* Run the following install site script on the apache container by copying and pasting this command:
+```bash
+docker exec -it isle-apache-ld bash /utility-scripts/isle_drupal_build_tools/isle_islandora_installer.sh`
+```
 
 _For Windows Users only_
 

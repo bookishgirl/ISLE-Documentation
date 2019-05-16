@@ -3,6 +3,8 @@ site_description: Documentation for Islandora Enterprise (ISLE)
 
 site_dir: site
 docs_dir: docs
+extra_css: [extra.css]
+extra_javascript: [extra.js]
 #markdown_extensions:
 #    - del_ins
 theme:
@@ -16,51 +18,46 @@ extra:
     icon: 'account_balance'
 
 nav:
-- Home: index.md
-- 'Installation and Migration Instructions':
-  - '1. Configure the Host Server':
-    # - 'CentOS 7.x': '01_installation_host_server/install_on_centos.md'
-    # - 'Ubuntu 18.04': '01_installation_host_server/install_on_ubuntu_1804.md'
-    # - 'Docker for Mac High Sierra': '01_installation_host_server/install_docker_for_mac.md'
-    # - 'Docker for Windows 10': '01_installation_host_server/install_docker_for_windows.md'
-    # - 'Vagrant & VirtualBox on MacOS (Deprecated)': '01_installation_host_server/install_macos_vagrant.md'
-    - 'Hardware Requirements': '01_installation_host_server/server-requirements.md'
-    - 'Software Dependencies': '01_installation_host_server/software-dependencies.md'
-    - 'Troubleshooting': '01_installation_host_server/install_troubleshooting.md'
-  - '2. Deploy ISLE':
-    - 'Deploy a Test Site':
-      - 'Test Site Example User Story': '02_installation_test/ild_example_user_story.md'
-      - 'Test Site Deploy Guide': '02_installation_test/ild_installation_guide.md'
-      - 'Test Site Resources': '02_installation_test/ild_resources.md'
-    - 'Deploy a New ISLE Site':
-      - 'New Site Example User Story': '03_installation_new_site/new_site_example_user_story.md'
-      - 'New Site Deploy Guide - w/ Single ISLE Environment': '03_installation_new_site/new_site_installation_guide_single.md'
-      - 'New Site Deploy Guide - w/ multiple ISLE Environments': '03_installation_new_site/new_site_installation_guide_multi.md'
-    - 'Migrate and Deploy an Existing Islandora site to ISLE':
-      - 'Migration Example User Story': '04_installation_migration/migration_example_user_story.md'
-      - 'Migration Guide': '04_installation_migration/migration_installation_guide.md'
-      - 'Migration Export Checklist': '04_installation_migration/migration_export_checklist.md'
-      - 'Migration Merge Checklist': '04_installation_migration/migration_merge_checklist.md'
-      - 'Migration Reindex Process': '04_installation_migration/migration_reindex_process.md'
-- 'Get Help': 'get_help.md'
-- 'Developer Docs':
-  - 'Release process': '05_developer_docs/dev_release_process.md'
-  - 'Example User Story': '05_developer_docs/dev_example_user_story.md'
-  - 'Testing Guide': '05_developer_docs/dev_testing_guide.md'
+- Get Started: index.md
+- 'Install ISLE':
+  - '1. Hardware Requirements': 'install/host-hardware-requirements.md'
+  - '2. Software Dependencies': 'install/host-software-dependencies.md'
+  - '3. Demo ISLE Installation': 'install/install-demo.md'
+  - '4. Remote Server ISLE Installation': 'install/install-server.md'
+- 'Update ISLE': 'update/update.md'
+- 'Migrate Existing Site to ISLE':
+  - 'Migrate to ISLE Environment': 'migrate/install-migration.md'
+  - 'Migration Export Checklist': 'migrate/export-checklist.md'
+  - 'Migration Merge Checklist': 'migrate/merge-checklist.md'
+  - 'Migration Reindex Process': 'migrate/reindex-process.md'
 - 'Appendices':
-  - 'Updating ISLE': '07_appendices/update_isle.md'
-  - 'Editing the /ect/hosts file': '07_appendices/editing-the-hosts-file.md'
-  - 'Sample IT Department Request Letter': '07_appendices/sample-it-department-request.md'
-  - 'Installing a Drupal Module with Composer': '07_appendices/installing-module-with-composer.md'
-  - 'Installing a Drupal Module with Drush': '07_appendices/installing-module-with-drush.md'
-  - 'Opening a Terminal in a Running Container': '07_appendices/open-terminal-in-running-container.md'
-  - 'Using Let''s Encrypt with ISLE' : '07_appendices/configuring-lets-encrypt.md'
-  - 'Note/Warning about installing on Redhat': '07_appendices/redhat.md'
+  - 'Glossary': 'appendices/glossary.md'
+  - 'Installing a Drupal Module with Composer': 'appendices/installing-module-with-composer.md'
+  - 'Installing a Drupal Module with Drush': 'appendices/installing-module-with-drush.md'
   - 'Installing on Google Cloud Platform (Google Doc)': 'https://docs.google.com/document/d/1r-I9n8mUhlJ5Z-X9AO-RrikhzH6I8bTPIL25LmtRbxE'
-- 'About': 
-  - 'About ISLE': '08_about/about.md'
-  - 'Contributing to ISLE': '08_about/contributing_to_ISLE.md'
-  - 'About Maintainers': '08_about/about_maintainers.md'
-#  - 'Policies': '08_about/policies.md'
-- 'Release Notes': '09_release_notes/release_notes.md'
-- 'Glossary of Terms and Variables': glossary.md
+  - 'Opening a Terminal in a Running Container': 'appendices/open-terminal-in-running-container.md'
+  - 'Sample IT Department Request Letter': 'appendices/sample-it-department-request.md'
+  - 'Troubleshooting': 'appendices/install-troubleshooting.md'
+  - 'User Stories':
+    - 'Demo ISLE Installation Example User Story': 'appendices/user-story-demo-site.md'
+    - 'New Site Example User Story': 'appendices/user-story-new-site.md'
+    - 'Migration Example User Story': 'appendices/user-story-migration-site.md'
+  - 'Using Let''s Encrypt with ISLE' : 'appendices/configuring-lets-encrypt.md'
+  - 'Warning about Red Hat Install': 'appendices/redhat.md'
+- 'Cookbook Recipes':
+  - 'ISLE Cheat Sheet: Docker Commands': 'cookbook-recipes/isle-cheatsheet-docker-commands.md'
+- 'About':
+  - 'Contributing to ISLE': 'about/contributing.md'
+  - 'About ISLE': 'about/about-isle.md'
+  - 'About Committers': 'about/committers.md'
+  - 'Contributor Docs':
+    - 'Docs: MkDocs': 'contributor-docs/mkdocs.md'
+    - 'Docs: Spell Checker': 'contributor-docs/spell-checker.md'
+    - 'Docs: Style Guide': 'contributor-docs/style-guide.md'
+    - 'Release Process': 'contributor-docs/release-process.md'
+    - 'Testing Guide': 'contributor-docs/testing-guide.md'
+  - 'Get Help': 'about/get-help.md'
+- 'Release Notes':
+  - 'Latest release: 1.1.1': 'release-notes/release.md'
+  - 'Previous releases': 
+     - '1.1': 'release-notes/release-1-1.md'
